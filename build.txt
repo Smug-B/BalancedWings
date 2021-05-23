@@ -1,0 +1,8 @@
+displayName = Balanced Wings
+author = Smug
+version = 0.1
+hideCode = true
+hideResources = true
+includeSource = false
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePDB = false

@@ -1,0 +1,5 @@
+Aims to change the dynamics of how players utilise wings.
+
+Players would often time jump from carelessly tall heights and have their wings protect them from any form of fall damage just by existing. This will no longer be the case.
+
+Players will now take fall damage, as a result they'll need to take mechanics such as gliding seriously if they don't want to suffer the tragic consequences.
