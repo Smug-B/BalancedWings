@@ -67,6 +67,9 @@ namespace BalancedWings
 				{
 					player.fallStart2 = (int)(player.position.Y / 16);
 				}
+				if (player.wings > 0 && player.controlJump) {
+					player.fallStart2 = (int)(player.position.Y / 16);
+				}
 			});
 		}
 	}
@@ -75,11 +78,11 @@ namespace BalancedWings
 	{
 		public override void PostUpdateMiscEffects()
 		{
-			if (player.wingsLogic > 0 && player.wingTime <= 0 && player.controlJump)
+			if (player.wings > 0 && player.wingTime <= 0 && player.controlJump)
 			{
 				int playerY = (int)(player.position.Y / 16);
 				int playerFallDistance = playerY - player.fallStart2;
-				player.fallStart2 += (int)(playerFallDistance * 0.05f);
+				player.fallStart2 = playerY;
 			}
 		}
 	}
