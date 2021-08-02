@@ -70,6 +70,9 @@ namespace BalancedWings
 				if (player.wings > 0 && player.controlJump) {
 					player.fallStart2 = (int)(player.position.Y / 16);
 				}
+				if (player.wet) {
+					player.fallStart2 = (int)(player.position.Y / 16);
+				}
 			});
 		}
 	}
