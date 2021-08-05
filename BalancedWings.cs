@@ -35,15 +35,7 @@ namespace BalancedWings
 			cursor.EmitDelegate<Func<Player, int>>((player) =>
 			{
 				int playerY = (int)(player.position.Y / 16f);
-				int fallStart;
-
-				if (player.wings > 0) {
-					fallStart = player.fallStart2;
-				}
-				else {
-					fallStart = player.fallStart;
-				}
-
+				int fallStart = player.wings > 0 ? player.fallStart2 : player.fallStart;
 				return playerY - fallStart;
 			});
 
@@ -63,14 +55,8 @@ namespace BalancedWings
 			cursor.Emit(OpCodes.Ldarg_0);
 			cursor.EmitDelegate<Action<Player>>((player) =>
 			{
-				if (player.velocity.Y <= 0)
+				if (player.velocity.Y <= 0 || player.wet || (player.wings > 0 && player.controlJump))
 				{
-					player.fallStart2 = (int)(player.position.Y / 16);
-				}
-				if (player.wings > 0 && player.controlJump) {
-					player.fallStart2 = (int)(player.position.Y / 16);
-				}
-				if (player.wet) {
 					player.fallStart2 = (int)(player.position.Y / 16);
 				}
 			});

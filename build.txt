@@ -1,6 +1,6 @@
 displayName = Balanced Wings
 author = Smug
-version = 0.1
+version = 1.1
 hideCode = true
 hideResources = true
 includeSource = false
